@@ -8,6 +8,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
+    "deploy": "cdk deploy",
+    "synth": "cdk synth",
     "cdk": "cdk"
   },
   "devDependencies": {
@@ -34,7 +36,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,md}": "prettier --write"
+    "*.{js,ts,json,md}": "prettier --write"
   },
   "prettier": {
     "singleQuote": true
