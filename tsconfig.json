@@ -4,9 +4,9 @@
     "module": "commonjs",
     "lib": ["es2018", "DOM"],
     "declaration": true,
-    "strict": true,
+    "strict": false,
     "noImplicitAny": true,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noUnusedLocals": false,
@@ -16,8 +16,9 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types", "./typings.d.ts"]
   },
   "exclude": ["cdk.out"]
 }
