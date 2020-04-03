@@ -10,3 +10,6 @@ cdk.out
 # Parcel build directories
 .cache
 .build
+
+# Environment files
+*.env

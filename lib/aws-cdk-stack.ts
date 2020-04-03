@@ -32,7 +32,6 @@ export class AwsCdkStack extends cdk.Stack {
             originAccessIdentity: cloudFrontOAI,
           },
           behaviors: [{ isDefaultBehavior: true }],
-          originPath: `/`,
         },
       ],
     };
