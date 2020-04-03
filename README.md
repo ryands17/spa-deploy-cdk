@@ -10,7 +10,9 @@ This is an [aws-cdk](https://aws.amazon.com/cdk/) project where you can deploy a
 
 **Steps**
 
-1. Rename the `.example.env` file to `.env` and replace all the values with your predefined values for your stack
+1. Rename the `.example.env` file to `.env` and replace all the values with your predefined values for your stack.
+
+**_Note_**: All the variables are mandatory! Without that, the stack wouldn't work.
 
 2. Run `npm install`
 
