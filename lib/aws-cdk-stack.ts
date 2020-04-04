@@ -71,6 +71,7 @@ export class AwsCdkStack extends cdk.Stack {
       repo: cfg.REPO_NAME,
       webhook: true,
       webhookFilters: webhooks,
+      reportBuildStatus: true,
     });
 
     const project = new Codebuild.Project(this, `${cfg.WEBSITE_NAME}-build`, {
@@ -92,7 +93,7 @@ export class AwsCdkStack extends cdk.Stack {
       timeout: cdk.Duration.minutes(20),
     });
 
-    // add iam policy for S3 access to this role
+    // iam policy to push your build to S3
     project.addToRolePolicy(
       new IAM.PolicyStatement({
         effect: IAM.Effect.ALLOW,
@@ -103,6 +104,20 @@ export class AwsCdkStack extends cdk.Stack {
           's3:GetObject*',
           's3:DeleteObject',
           's3:PutObject',
+        ],
+      })
+    );
+    // iam policy to invalidate cloudfront's cache
+    project.addToRolePolicy(
+      new IAM.PolicyStatement({
+        effect: IAM.Effect.ALLOW,
+        resources: ['*'],
+        actions: [
+          'cloudfront:CreateInvalidation',
+          'cloudfront:GetDistribution*',
+          'cloudfront:GetInvalidation',
+          'cloudfront:ListInvalidations',
+          'cloudfront:ListDistributions',
         ],
       })
     );
