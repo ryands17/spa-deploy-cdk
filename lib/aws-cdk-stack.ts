@@ -107,7 +107,7 @@ export class AwsCdkStack extends cdk.Stack {
         ],
       })
     );
-    // iam policy to invalidate cloudfront's cache
+    // iam policy to invalidate cloudfront distribution's cache
     project.addToRolePolicy(
       new IAM.PolicyStatement({
         effect: IAM.Effect.ALLOW,
