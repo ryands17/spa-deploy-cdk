@@ -1,5 +1,5 @@
 {
-  "name": "aws-cdk",
+  "name": "spa-deployment-cdk",
   "version": "0.1.0",
   "bin": {
     "aws-cdk": "bin/aws-cdk.js"
