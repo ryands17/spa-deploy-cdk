@@ -10,7 +10,7 @@ import {
 import * as cfg from './config';
 
 export class AwsCdkStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // S3 bucket for a static website
