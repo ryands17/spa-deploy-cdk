@@ -15,7 +15,7 @@
   "devDependencies": {
     "@aws-cdk/assert": "^1.33.0",
     "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.0",
+    "@types/node": "^13.13.2",
     "aws-cdk": "^1.33.0",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
