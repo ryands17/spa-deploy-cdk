@@ -18,7 +18,7 @@
     "@types/node": "^13.13.2",
     "aws-cdk": "^1.36.1",
     "husky": "^4.2.5",
-    "lint-staged": "^10.1.7",
+    "lint-staged": "^10.2.2",
     "jest": "^25.4.0",
     "prettier": "^2.0.5",
     "ts-jest": "^25.4.0",
