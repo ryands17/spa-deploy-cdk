@@ -2,6 +2,8 @@
 
 This is an [aws-cdk](https://aws.amazon.com/cdk/) project where you can deploy any SPA (React, Angular, Vue, etc.) via Codebuild on S3 and served via Cloudfront.
 
+Link to the tutorial that I've written: https://dev.to/ryands17/deploying-a-spa-using-aws-cdk-typescript-4ibf
+
 **_Note_**: This configuration is for GitHub only. For Bitbucket, you can edit the source accordingly.
 
 **Prerequisites**
