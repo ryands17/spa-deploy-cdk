@@ -13,24 +13,24 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.36.1",
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.4",
-    "aws-cdk": "^1.36.1",
+    "@aws-cdk/assert": "^1.42.0",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.6",
+    "aws-cdk": "^1.42.0",
     "husky": "^4.2.5",
     "jest": "^25.5.3",
-    "lint-staged": "^10.2.2",
+    "lint-staged": "^10.2.7",
     "prettier": "^2.0.5",
     "ts-jest": "^25.4.0",
-    "ts-node": "^8.9.1",
-    "typescript": "^3.8.3"
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudfront": "^1.36.1",
-    "@aws-cdk/aws-codebuild": "^1.36.1",
-    "@aws-cdk/aws-iam": "^1.36.1",
-    "@aws-cdk/aws-s3": "^1.36.1",
-    "@aws-cdk/core": "^1.36.1",
+    "@aws-cdk/aws-cloudfront": "^1.42.0",
+    "@aws-cdk/aws-codebuild": "^1.42.0",
+    "@aws-cdk/aws-iam": "^1.42.0",
+    "@aws-cdk/aws-s3": "^1.42.0",
+    "@aws-cdk/core": "^1.42.0",
     "dotenv": "^8.2.0",
     "source-map-support": "^0.5.19"
   },
