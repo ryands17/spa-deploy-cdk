@@ -14,7 +14,7 @@ jobs:
       WEBSITE_NAME: 'my-website'
       BUCKET_NAME: 'my-site-test'
       REPO_OWNER: 'ryands17'
-      REPO_NAME: 'spa-deployment-cdk'
+      REPO_NAME: 'react-apollo-linkstate'
 
     steps:
       - name: Checkout
