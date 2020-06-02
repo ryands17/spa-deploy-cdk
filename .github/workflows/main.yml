@@ -9,6 +9,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      REGION: 'us-east-1'
+      WEBSITE_NAME: 'my-website'
+      BUCKET_NAME: 'my-site-test'
+      REPO_OWNER: 'ryands17'
+      REPO_NAME: 'spa-deployment-cdk'
 
     steps:
       - name: Checkout
