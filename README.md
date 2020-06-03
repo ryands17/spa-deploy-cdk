@@ -1,5 +1,7 @@
 # SPA Deploy Codebuild
 
+![Build Status](https://github.com/ryands17/spa-deploy-cdk/workflows/CI/badge.svg)
+
 This is an [aws-cdk](https://aws.amazon.com/cdk/) project where you can deploy any SPA (React, Angular, Vue, etc.) via Codebuild on S3 and served via Cloudfront.
 
 Link to the tutorial that I've written: https://dev.to/ryands17/deploying-a-spa-using-aws-cdk-typescript-4ibf
@@ -12,13 +14,13 @@ Link to the tutorial that I've written: https://dev.to/ryands17/deploying-a-spa-
 
 **Steps**
 
-1. Rename the `.example.env` file to `.env` and replace all the values with your predefined values for your stack.
+1. Rename the `.example.env` file to `.env` and replace all the values with predefined values for your stack.
 
 **_Note_**: All the variables are mandatory! Without that, the stack wouldn't work.
 
-2. Run `npm install`
+2. Run `yarn` (recommended) or `npm install`
 
-3. Run `npm run deploy -- --profile profileName` to deploy the stack to your specified region. You can skip providing the profile parameter if the profile name is `default`.
+3. Run `yarn deploy --profile profileName` or `npm run deploy -- --profile profileName` to deploy the stack to your specified region. You can skip providing the profile name if it is `default`.
 
 4. You can start the build from the console in `Codebuild` and view your website on the Cloudfront provided URL!
 
@@ -26,9 +28,9 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Commands
 
-- `npm run build` compile typescript to js
-- `npm run deploy` deploy this stack to your AWS account/region specified in the `.env`
-- `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
+- `yarn build` compile typescript to js
+- `yarn deploy` deploy this stack to your AWS account/region specified in the `.env`
+- `yarn watch` watch for changes and compile
+- `yarn test` perform the jest unit tests
 - `cdk diff` compare deployed stack with current state
 - `cdk synth` emits the synthesized CloudFormation template
