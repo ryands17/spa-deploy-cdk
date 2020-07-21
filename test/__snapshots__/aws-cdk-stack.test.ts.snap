@@ -364,6 +364,8 @@ Object {
           "IPV6Enabled": true,
           "Origins": Array [
             Object {
+              "ConnectionAttempts": 3,
+              "ConnectionTimeout": 10,
               "DomainName": Object {
                 "Fn::GetAtt": Array [
                   "mysitetest619264D3",
