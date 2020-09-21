@@ -2,6 +2,19 @@
 
 exports[`snapshot works correctly 1`] = `
 Object {
+  "Outputs": Object {
+    "cloudfronturl": Object {
+      "Export": Object {
+        "Name": "Cloudfront URL",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "mywebsitecfdCFDistribution58CC5904",
+          "DomainName",
+        ],
+      },
+    },
+  },
   "Resources": Object {
     "OAIE1EFC67F": Object {
       "Properties": Object {

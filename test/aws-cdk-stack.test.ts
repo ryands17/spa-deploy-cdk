@@ -6,6 +6,7 @@ import {
   SynthUtils,
   haveResourceLike,
   expect as expectCDK,
+  haveOutput,
 } from '@aws-cdk/assert';
 import { AwsCdkStack } from '../lib/aws-cdk-stack';
 
@@ -37,6 +38,17 @@ test('stack has resource of Cloudfront dist and Origin Access Identity', () => {
       CloudFrontOriginAccessIdentityConfig: {
         Comment: `OAI for ${cfg.WEBSITE_NAME} website.`,
       },
+    })
+  );
+});
+
+test('stack has an output of the Cloudfront distribution URL', () => {
+  const stack = createStack();
+
+  expectCDK(stack).to(
+    haveOutput({
+      exportName: 'Cloudfront URL',
+      outputName: 'cloudfronturl',
     })
   );
 });
