@@ -9,17 +9,15 @@ import {
 } from '@aws-cdk/assert';
 import { AwsCdkStack } from '../lib/aws-cdk-stack';
 
-const stackName = 'SPA-deploy';
-
 test('snapshot works correctly', () => {
-  const app = new cdk.App();
-  const stack = new AwsCdkStack(app, stackName);
+  const stack = createStack();
+
   expect(SynthUtils.toCloudFormation(stack)).toMatchSnapshot();
 });
 
 test('stack has resource of an S3 bucket', () => {
-  const app = new cdk.App();
-  const stack = new AwsCdkStack(app, stackName);
+  const stack = createStack();
+
   expectCDK(stack).to(
     haveResourceLike('AWS::S3::Bucket', {
       WebsiteConfiguration: {
@@ -31,8 +29,7 @@ test('stack has resource of an S3 bucket', () => {
 });
 
 test('stack has resource of Cloudfront dist and Origin Access Identity', () => {
-  const app = new cdk.App();
-  const stack = new AwsCdkStack(app, stackName);
+  const stack = createStack();
 
   expectCDK(stack).to(haveResourceLike('AWS::CloudFront::Distribution'));
   expectCDK(stack).to(
@@ -43,3 +40,9 @@ test('stack has resource of Cloudfront dist and Origin Access Identity', () => {
     })
   );
 });
+
+function createStack() {
+  const stackName = 'SPA-deploy';
+  const app = new cdk.App();
+  return new AwsCdkStack(app, stackName);
+}
