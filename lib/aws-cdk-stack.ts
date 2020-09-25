@@ -7,14 +7,14 @@ import {
   CloudFrontWebDistributionProps,
   OriginAccessIdentity,
 } from '@aws-cdk/aws-cloudfront';
-import * as cfg from './config';
+import { envVars } from './config';
 
 export class AwsCdkStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // S3 bucket for a static website
-    const bucket = new S3.Bucket(this, cfg.BUCKET_NAME, {
+    const bucket = new S3.Bucket(this, envVars.BUCKET_NAME, {
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'index.html',
       removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -24,7 +24,7 @@ export class AwsCdkStack extends cdk.Stack {
 
     // cloudfront distribution for cdn & https
     const cloudFrontOAI = new OriginAccessIdentity(this, 'OAI', {
-      comment: `OAI for ${cfg.WEBSITE_NAME} website.`,
+      comment: `OAI for ${envVars.WEBSITE_NAME} website.`,
     });
 
     const cloudFrontDistProps: CloudFrontWebDistributionProps = {
@@ -41,7 +41,7 @@ export class AwsCdkStack extends cdk.Stack {
 
     const cloudfrontDist = new CloudFrontWebDistribution(
       this,
-      `${cfg.WEBSITE_NAME}-cfd`,
+      `${envVars.WEBSITE_NAME}-cfd`,
       cloudFrontDistProps
     );
 
@@ -63,35 +63,39 @@ export class AwsCdkStack extends cdk.Stack {
       Codebuild.FilterGroup.inEventOf(
         Codebuild.EventAction.PUSH,
         Codebuild.EventAction.PULL_REQUEST_MERGED
-      ).andHeadRefIs(cfg.BUILD_BRANCH),
+      ).andHeadRefIs(envVars.BUILD_BRANCH),
     ];
 
     const repo = Codebuild.Source.gitHub({
-      owner: cfg.REPO_OWNER,
-      repo: cfg.REPO_NAME,
+      owner: envVars.REPO_OWNER,
+      repo: envVars.REPO_NAME,
       webhook: true,
       webhookFilters: webhooks,
       reportBuildStatus: true,
     });
 
-    const project = new Codebuild.Project(this, `${cfg.WEBSITE_NAME}-build`, {
-      buildSpec: Codebuild.BuildSpec.fromSourceFilename('buildspec.yml'),
-      projectName: `${cfg.WEBSITE_NAME}-build`,
-      environment: {
-        buildImage: Codebuild.LinuxBuildImage.STANDARD_3_0,
-        computeType: Codebuild.ComputeType.SMALL,
-        environmentVariables: {
-          S3_BUCKET: {
-            value: bucket.bucketName,
-          },
-          CLOUDFRONT_DIST_ID: {
-            value: cloudfrontDist.distributionId,
+    const project = new Codebuild.Project(
+      this,
+      `${envVars.WEBSITE_NAME}-build`,
+      {
+        buildSpec: Codebuild.BuildSpec.fromSourceFilename('buildspec.yml'),
+        projectName: `${envVars.WEBSITE_NAME}-build`,
+        environment: {
+          buildImage: Codebuild.LinuxBuildImage.STANDARD_3_0,
+          computeType: Codebuild.ComputeType.SMALL,
+          environmentVariables: {
+            S3_BUCKET: {
+              value: bucket.bucketName,
+            },
+            CLOUDFRONT_DIST_ID: {
+              value: cloudfrontDist.distributionId,
+            },
           },
         },
-      },
-      source: repo,
-      timeout: cdk.Duration.minutes(20),
-    });
+        source: repo,
+        timeout: cdk.Duration.minutes(20),
+      }
+    );
 
     // iam policy to push your build to S3
     project.addToRolePolicy(
@@ -123,7 +127,7 @@ export class AwsCdkStack extends cdk.Stack {
     );
 
     new cdk.CfnOutput(this, 'cloudfront-url', {
-      exportName: 'Cloudfront URL',
+      exportName: 'Cloudfront-URL',
       value: cloudfrontDist.distributionDomainName,
     });
   }

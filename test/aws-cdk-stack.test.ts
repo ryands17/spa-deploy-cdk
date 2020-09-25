@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 config();
-import * as cfg from '../lib/config';
+import { envVars } from '../lib/config';
 import * as cdk from '@aws-cdk/core';
 import {
   SynthUtils,
@@ -36,7 +36,7 @@ test('stack has resource of Cloudfront dist and Origin Access Identity', () => {
   expectCDK(stack).to(
     haveResourceLike('AWS::CloudFront::CloudFrontOriginAccessIdentity', {
       CloudFrontOriginAccessIdentityConfig: {
-        Comment: `OAI for ${cfg.WEBSITE_NAME} website.`,
+        Comment: `OAI for ${envVars.WEBSITE_NAME} website.`,
       },
     })
   );

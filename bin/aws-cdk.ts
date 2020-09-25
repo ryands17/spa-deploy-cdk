@@ -4,11 +4,12 @@ config();
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import { AwsCdkStack } from '../lib/aws-cdk-stack';
-import { REGION } from '../lib/config';
+import { envVars, validateEnvVariables } from '../lib/config';
 
+validateEnvVariables();
 const app = new cdk.App();
 new AwsCdkStack(app, 'SPA-deploy', {
   env: {
-    region: REGION,
+    region: envVars.REGION,
   },
 });
