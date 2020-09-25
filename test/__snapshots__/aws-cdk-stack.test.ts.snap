@@ -5,7 +5,7 @@ Object {
   "Outputs": Object {
     "cloudfronturl": Object {
       "Export": Object {
-        "Name": "Cloudfront URL",
+        "Name": "Cloudfront-URL",
       },
       "Value": Object {
         "Fn::GetAtt": Array [
@@ -173,7 +173,7 @@ Object {
                 "Type": "EVENT",
               },
               Object {
-                "Pattern": "^refs/heads/master$",
+                "Pattern": "^refs/heads/main$",
                 "Type": "HEAD_REF",
               },
             ],

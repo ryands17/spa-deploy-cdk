@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2018",
     "module": "commonjs",
-    "lib": ["es2018", "DOM"],
+    "lib": ["ESNext", "DOM"],
     "declaration": true,
     "strict": false,
     "noImplicitAny": true,
@@ -18,7 +18,7 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["./node_modules/@types", "./typings.d.ts"]
+    "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["cdk.out"]
 }
