@@ -1,3 +1,5 @@
+import chalk from 'chalk';
+
 export const envVars = {
   REGION: process.env.REGION || 'us-east-1',
   WEBSITE_NAME: process.env.WEBSITE_NAME,
@@ -11,6 +13,8 @@ export const envVars = {
 export function validateEnvVariables() {
   for (let variable in envVars) {
     if (!envVars[variable as keyof typeof envVars])
-      throw Error(`Environment variable ${variable} is not defined!`);
+      throw Error(
+        chalk.red(`Environment variable ${variable} is not defined!`)
+      );
   }
 }

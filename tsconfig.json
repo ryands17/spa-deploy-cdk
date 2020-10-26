@@ -17,6 +17,7 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
     "strictPropertyInitialization": false,
     "typeRoots": ["./node_modules/@types"]
   },
