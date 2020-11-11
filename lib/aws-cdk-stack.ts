@@ -126,8 +126,7 @@ export class AwsCdkStack extends cdk.Stack {
       })
     );
 
-    new cdk.CfnOutput(this, 'cloudfront-url', {
-      exportName: 'Cloudfront-URL',
+    new cdk.CfnOutput(this, 'cloudfronturl', {
       value: cloudfrontDist.distributionDomainName,
     });
   }

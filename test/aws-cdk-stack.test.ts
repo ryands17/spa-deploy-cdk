@@ -73,7 +73,6 @@ test('stack has an output of the Cloudfront distribution URL', () => {
 
   expectCDK(stack).to(
     haveOutput({
-      exportName: 'Cloudfront-URL',
       outputName: 'cloudfronturl',
     })
   );
