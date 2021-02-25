@@ -1,7 +1,7 @@
 {
   "extends": ["config:base"],
   "masterIssue": true,
-  "schedule": ["every 1 month on Friday"],
+  "schedule": ["on the 7 day of the month"],
   "packageRules": [
     {
       "matchUpdateTypes": [
