@@ -22,7 +22,7 @@
     "aws-cdk": "1.117.0",
     "husky": "7.0.1",
     "jest": "27.0.6",
-    "lint-staged": "11.0.0",
+    "lint-staged": "11.1.2",
     "prettier": "2.3.2",
     "ts-jest": "27.0.4",
     "ts-node": "10.0.0",
