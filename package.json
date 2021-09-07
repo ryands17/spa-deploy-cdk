@@ -20,7 +20,7 @@
     "@types/jest": "26.0.24",
     "@types/node": "15.12.2",
     "aws-cdk": "1.117.0",
-    "husky": "7.0.1",
+    "husky": "7.0.2",
     "jest": "27.0.6",
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
