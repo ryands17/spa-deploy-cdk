@@ -35,7 +35,7 @@
     "@aws-cdk/aws-s3": "1.121.0",
     "@aws-cdk/core": "1.121.0",
     "dotenv": "10.0.0",
-    "source-map-support": "0.5.19"
+    "source-map-support": "0.5.20"
   },
   "lint-staged": {
     "*.{js,ts,json,md}": "prettier --write"
