@@ -16,10 +16,10 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.134.0",
+    "@aws-cdk/assert": "2.2.0",
     "@types/jest": "27.0.3",
     "@types/node": "16.11.12",
-    "aws-cdk": "1.134.0",
+    "aws-cdk": "2.2.0",
     "husky": "7.0.4",
     "jest": "27.4.3",
     "lint-staged": "12.1.2",
