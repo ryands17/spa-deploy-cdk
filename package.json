@@ -34,7 +34,7 @@
     "@aws-cdk/aws-iam": "1.143.0",
     "@aws-cdk/aws-s3": "1.143.0",
     "@aws-cdk/core": "1.143.0",
-    "dotenv": "10.0.0",
+    "dotenv": "16.0.0",
     "source-map-support": "0.5.21"
   },
   "lint-staged": {
