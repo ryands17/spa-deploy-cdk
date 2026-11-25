@@ -16,10 +16,10 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.159.0",
+    "@aws-cdk/assert": "1.203.0",
     "@types/jest": "27.5.2",
     "@types/node": "16.18.119",
-    "aws-cdk": "1.159.0",
+    "aws-cdk": "1.203.0",
     "husky": "7.0.4",
     "jest": "27.5.1",
     "lint-staged": "12.5.0",
@@ -29,11 +29,11 @@
     "typescript": "4.9.5"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudfront": "1.159.0",
-    "@aws-cdk/aws-codebuild": "1.159.0",
-    "@aws-cdk/aws-iam": "1.159.0",
-    "@aws-cdk/aws-s3": "1.159.0",
-    "@aws-cdk/core": "1.159.0",
+    "@aws-cdk/aws-cloudfront": "1.204.0",
+    "@aws-cdk/aws-codebuild": "1.204.0",
+    "@aws-cdk/aws-iam": "1.204.0",
+    "@aws-cdk/aws-s3": "1.204.0",
+    "@aws-cdk/core": "1.204.0",
     "dotenv": "16.4.5",
     "source-map-support": "0.5.21"
   },
